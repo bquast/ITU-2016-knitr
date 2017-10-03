@@ -1,0 +1,66 @@
+---
+title: "ITU Annual Report 2016"
+author: "Report on the Implementation of the Strategic Plan and Activities of the Union"
+date: "October 3, 2017"
+output: 
+  html_document: 
+    fig_caption: yes
+    keep_md: yes
+    self_contained: no
+    theme: flatly
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(cache = TRUE)
+knitr::opts_chunk$set(cache.path = 'data/cache/')
+knitr::opts_chunk$set(fig.path = 'figures/')
+library(dplyr)
+library(ggplot2)
+library(artyfarty)
+library(plotly)
+load('data/households_worldwide.RData')
+```
+
+# Strategic Goals of the Union
+
+The Connect 2020 Agenda was adopted by the 2014 Plenipotentiary Conference as part of ITU's strategic plan for the 2016-2019 quadrennium. 
+At the heart of the Agenda and the ITU Strategic Plan are four goals, relating to:
+
+ - Growth – enabling and fostering acceses to and increased use of ICTs.
+ - Inclusiveness – bridging the digital divide and providing broadband for all.
+ - Sustainability – managing challenges resulting from ICT development.
+ - Innovation and partnership – leading, improving and adapting to the changing technology environment.
+ 
+The four goals include 17 targets, designed to provide an indication of whether each of the goals is being achieved up to 2020 and to help ITU and other stakeholders to focus their priorities during that period.
+
+## Goal 1: Growth
+
+Goal 1: Growth, is measured using the following three targets:
+
+ - Target 1.1: Worldwide, 55 per cent of households should have access to the Internet by 2020.
+ - Target 1.2: Worldwide, 60 per cent of individuals should be using the Internet by 2020.
+ - Target 1.3: Worldwide, telecommunications/ICTs should be 40 per cent more affordable by 2020.
+ 
+```{r target1-1, message=FALSE}
+ggplot(households_worldwide) + 
+  geom_col( aes(x = year, y = households, fill="#000099") ) +
+  theme_economist() +
+    ggtitle("Households with Internet Access") +
+    scale_fill_manual(values = pal("economist")) +
+    guides(fill=FALSE) -> households_plot
+ggplotly(households_plot) %>% config(displayModeBar = FALSE)
+```
+ 
+
+# Radiocommunication Sector Objectives
+
+# Telecommunication Standardization Sector Objectives
+
+# Telecommunication Development Sector Objectives
+
+# Inter-Sectoral Objectives
+
+# Enablers by General Secretariat
+
