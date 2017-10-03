@@ -11,18 +11,6 @@ output:
     toc: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_chunk$set(cache = TRUE)
-knitr::opts_chunk$set(cache.path = 'data/cache/')
-knitr::opts_chunk$set(fig.path = 'figures/')
-library(dplyr)
-library(ggplot2)
-library(artyfarty)
-library(plotly)
-load('data/households_worldwide.RData')
-```
-
 # Strategic Goals of the Union
 
 The Connect 2020 Agenda was adopted by the 2014 Plenipotentiary Conference as part of ITU's strategic plan for the 2016-2019 quadrennium. 
@@ -35,13 +23,35 @@ At the heart of the Agenda and the ITU Strategic Plan are four goals, relating t
  
 The four goals include 17 targets, designed to provide an indication of whether each of the goals is being achieved up to 2020 and to help ITU and other stakeholders to focus their priorities during that period.
 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(cache = TRUE)
+knitr::opts_chunk$set(cache.path = 'data/cache/')
+knitr::opts_chunk$set(fig.path = 'figures/')
+library(dplyr)
+library(ggplot2)
+library(artyfarty)
+library(plotly)
+load('data/households_worldwide.RData')
+```
+
+
 ## Goal 1: Growth
+
+Enabling and fostering access to and increased use of ICTs.
 
 Goal 1: Growth, is measured using the following three targets:
 
  - Target 1.1: Worldwide, 55 per cent of households should have access to the Internet by 2020.
  - Target 1.2: Worldwide, 60 per cent of individuals should be using the Internet by 2020.
  - Target 1.3: Worldwide, telecommunications/ICTs should be 40 per cent more affordable by 2020.
+ 
+```{r read-excel}
+library(readxl)
+households_worldwide <- read_xls('data/households_worldwide.xls')
+```
  
 ```{r target1-1, message=FALSE}
 ggplot(households_worldwide) + 
@@ -52,11 +62,95 @@ ggplot(households_worldwide) +
     guides(fill=FALSE) -> households_plot
 ggplotly(households_plot) %>% config(displayModeBar = FALSE)
 ```
- 
+
+As noted in figures 1 and 2, the indicators used to highlight progress in relation to targets 1.1 and 1.2 show that in 2016, 52.3% of households and 47% of individuals globally are estimated to have access / be using the Internet, two percent and three percent, respectively, more than in 2015.
+
+## Goal 2: Inclusiveness
+
+Bridging the digital divide and providing broadband for all.
 
 # Radiocommunication Sector Objectives
 
+## Goal 3: Sustainability
+
+Managing challenges resulting from ICT development.
+
+## Goal 4: Innovation and partnership
+
+Lead, improve and adapt to the changing telecommunication/ICT environment.
+
+
+
 # Telecommunication Standardization Sector Objectives
+
+Following the World Radiocommunication Conference 2015 (WRC-15), the updated version of the Radio Regulations (Edition of 2016) was published in December 2016 and made freely available to the public. The Conference approved various resolutions relating to the preparation of WRC-19 and WRC-23. The preparatory studies requested by these resolutions are being conducted within ITU-R, with the support of the regional groups and other international organizations.
+
+On 12 December 2016 in Geneva, the ITU celebrated the 110th anniversary of the Radio Regulations. This gave the opportunity to showcase 110 years of successful development and implementation of this major treaty, which enables the radiocommunication ecosystem to exist in a sustainable manner. Celebrations included two panel discussions about the ITU Radio Regulations' impact on the ICT industry, and the challenges, opportunities, and future of the ITU Radio Regulations. The event was attended by over 540 participants from 106 countries. Present and former officials of the Union, present and former members of the Radio Regulations Board (RRB), and ITU-R and former CCIR Study Group Chairmen were also present.
+
+Throughout the year, ITU-R continued to process space and terrestrial notices and other related activities. ITU-R software was improved and new applications were delivered.
+
+The Radio Regulations Board met three times and approved new or modified Rules of Procedures related to WRC-15 decisions. Significant progress was registered in the reduction of interference cases from Italy into television services of its neighbors.
+
+New and revised Recommendations were approved; numerous reports were published. Assistance was provided to members, especially in developing countries, and capacity building activities were carried out including a World Radiocommunication Seminar (WRS-16), two Regional Radiocommunication Seminars and a Small Satellite Symposium, among others.
+
+## Objective R.1
+
+Meet, in a rational, equitable, efficient, economical and timely way, the ITU membership's requirements for radio-frequency spectrum and satellite-orbit resources, while avoiding harmful interference.
+
+ - R.1-1: Increased number of countries having satellite networks and earth stations recorded in the Master International Frequency Register (MIFR)
+ - R.1-2: Increased number of countries having terrestrial frequency assignments recorded in the MIFR
+ - R.1-3: Increased percentage of assignments recorded in the MIFR with favourable finding
+R.1-4: Increased percentage of countries which have completed the transition to digital terrestrial television broadcasting
+ - R.1-5: Increased percentage of spectrum assigned to satellite networks which is free from harmful interference
+ - R.1-6: Increased percentage of assignments to terrestrial services recorded in the MIFR which are free from harmful interference
+ 
+
+### R.1-1 Final acts of world radiocommunication conferences, updated Radio Regulations
+
+ - Following the World Radiocommunication Conference 2015 (WRC-15), the updated version of the Radio Regulations (Edition of 2016) was published in December 2016 and made freely available to the public. 
+ - The Conference took a number of decisions, which are reflected in the updated Radio Regulations or recorded in the minutes of its plenary sessions. In particular, the Conference approved various resolutions relating to the preparation of WRC-19 and WRC-23. The preparatory studies requested by these resolutions are being conducted within ITU-R, with the support of the regional groups and other international organizations, and address the following topics: 
+ - Earth stations on board unmanned aircraft [3]
+ - Earth stations in motion, Non-geostationary systems in the fixed-satellite service, High-altitude platform stations (HAPS)
+ - International Mobile Telecommunications (IMT)
+ - Wireless Access Systems including radio local area networks (R-LAN)
+ - Intelligent Transport Systems (ITS)
+ - Meteorological-satellite and Earth exploration-satellite services (space-to-Earth)
+ - Machine-type communication infrastructures
+
+### R.1-2 Final acts of regional radiocommunication conferences, regional agreements
+
+No regional radiocommunication conferences were organized during the considered period.
+
+
+### R.1-3 Rules of Procedure adopted by Radio Regulations Board (RRB)
+
+The RRB met three times in 2016 and adopted 32 new or revised Rules of Procedure (RoPs) relating to decisions by WRC-15 or practice by the Bureau on the application of the Radio Regulations and Regional Agreements.
+Furthermore, a list of proposed new or revised RoPs is being maintained for the period 2016 – 2019 (see Document RRB16-2/3(Rev.4)).
+
+### R.1-4 Results of the processing of space notices and other related activities
+
+The processing of space notices covered the following elements:
+
+ - 1,336 Advance Publication Information
+ - 401 requests for coordination for non-planned services, for which the treatment time increased beyond the four-month regulatory time limit, up to a maximum of 8 months, due to the unusually large number of submissions received at the end of WRC-15 and six month later as a result of the new allocations to FSS decided by WRC-15 and of the necessary modifications in processing software to reflect these decisions.
+ - 166 recordings of satellite networks in the MIFR
+ - 505 recordings of earth stations in the MIFR
+ - 41 requests for inclusion and 34 recordings in Appendices 30/30A Regions 1 and 3 Lists, 30 notifications pursuant to Article 5 of Appendices 30/30A.
+ - 42 requests for inclusion and 7 recordings in the Appendices 30B List, 7 notifications pursuant to Article 8 of Appendix 30B.
+ - 106 Due Diligence Information
+ - Cost recovery (CHF 15.6 million)
+ - 283 suppressions of satellite network filings, for not meeting the regulatory deadlines or the due diligence obligations, with the consent of the RRB, where appropriate.
+ - 77 cases of assistance provided to administrations for space stations and 368 for earth stations.
+ - 26 reports of harmful interference.
+
+
+## Objective R.2
+
+Provide for worldwide connectivity and interoperability, improved performance, quality, affordability and timeliness of service and overall system economy in radiocommunications, including through the development of international standards.
+
+## Objective R.3
+
+Foster the acquisition and sharing of knowledge and know-how on radiocommunications.
 
 # Telecommunication Development Sector Objectives
 
