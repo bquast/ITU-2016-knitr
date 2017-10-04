@@ -24,3 +24,34 @@ load("translation.RData")
 ## `r translation[lang][2,]`
 
 `r translation[lang][3,]`
+
+## `r translation[lang][4,]`
+
+`r translation[lang][7,]`
+
+`r translation[lang][8,]`
+
+`r translation[lang][9,]`
+
+`r translation[lang][10,]`
+
+`r translation[lang][11,]`
+
+### `r translation[lang][12,]`
+
+`r translation[lang][13,]`
+
+```{r target1-1, message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+library(artyfarty)
+library(plotly)
+load('data/households_worldwide.RData')
+ggplot(households_worldwide) + 
+  geom_col( aes(x = year, y = households, fill="#000099") ) +
+  theme_economist() +
+    ggtitle(as.character(translation[lang][14,])) +
+    scale_fill_manual(values = pal("economist")) +
+    theme(legend.position='none') -> households_plot
+ggplotly(households_plot) %>% config(displayModeBar = FALSE)
+```
