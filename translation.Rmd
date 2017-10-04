@@ -1,0 +1,26 @@
+---
+output: 
+  html_document: 
+    fig_caption: yes
+    keep_md: yes
+    self_contained: no
+---
+
+```{r choose-language, echo=FALSE}
+lang = "EN" # either "EN" or "FR"
+```
+
+
+```{r preamble, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r translation}
+load("translation.RData")
+```
+
+# `r translation[lang][1,]`
+
+## `r translation[lang][2,]`
+
+`r translation[lang][3,]`
