@@ -3,11 +3,16 @@ output:
   html_document: 
     fig_caption: yes
     keep_md: yes
-    self_contained: no
+    language: EN
 ---
 
+<style>
+body {
+text-align: right}
+</style>
+
 ```{r choose-language, echo=FALSE}
-lang = "EN" # either "EN" or "FR"
+lang = "AR" # either "EN" or "FR"
 ```
 
 
@@ -51,6 +56,8 @@ ggplot(households_worldwide) +
   geom_col( aes(x = year, y = households, fill="#000099") ) +
   theme_economist() +
     ggtitle(as.character(translation[lang][14,])) +
+    xlab( as.character(translation[lang][15,]) ) +
+    ylab( as.character(translation[lang][16,]) ) +
     scale_fill_manual(values = pal("economist")) +
     theme(legend.position='none') -> households_plot
 ggplotly(households_plot) %>% config(displayModeBar = FALSE)
